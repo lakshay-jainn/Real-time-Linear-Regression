@@ -1,0 +1,139 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentTT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <main class="mainContainer trainMainContainer">
+        <section class="mainContent">
+            <div class="trainTestContainer">
+                <div class="trainContainer">
+                    <h1 class="headings mainHeading">Train your Data <br>using Linear Regression</h1>
+                    <p class="paragraphs">by Lakshay jain</p>
+                    <div class="controls">
+
+                        <div class="slider-group">
+                            <h2>No. of iteration</h2>
+                            <input class="sliders" id ="iterations" type="range" min="10" max="10000" value="1000" step="10" oninput="updateValue(event)" required /> 
+                            <span class="value">1000</span>
+                        </div>
+
+                        <div class="slider-group">
+                            <h2>Learning rate</h2>
+                            <input class="predInput margin-top" id ="learning_rate" type="number" min="0.0001" max="0.1" value="0.0001" required />
+                            
+                        </div>
+
+                        <button type="submit" id="trainButton" class="trainButton">Start Training !!!</button>
+                    </div>
+                </div>
+                <div class="testContainer">
+                    <div id="predContainer" class="predContainer">
+                        <h1 class="headings font-medium">Test your Model</h1>
+                        <div class="predBox">
+                            <input id="predInput" class="predInput" type="number" placeholder="enter Temperture" />
+                            <button id="predBtn" class="predBtn" type="submit">Predict</button>
+                            <p id="predOutput" class="predOutput"></p>
+                        </div>
+                    </div>
+                    <div id="evalContainer" class="predContainer">
+                        <h1 class="headings font-medium">Evaluate your Model</h1>
+                        <p class="paragraphs text-center">Evaluate your model on data which it has never seen</p>
+                        <div class="evalUploadContainer margin-top">
+                            <form id="evalForm" class="evalUploadBox" onsubmit="submitEvalForm(event)">
+                                <label id ="file-name" class="fileUpload" for="real-file">Upload File</label>
+                                <input type="file" name="file" id="real-file" accept=".csv" onchange="showFileName()" />  
+                                <div class="evalBtnContainer">
+                                    <button id="testEvaluationBtn" class="fileSubmit" type = "submit" > Evaluate!!! </button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                            <!-- <div class="predBox">
+                                <input id="predInput" class="predInput" type="number" placeholder="enter Temperture" />
+                                <button id="predBtn" class="predBtn" type="submit">Predict</button>
+                                <p id="predOutput" class="predOutput"></p>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="gridContainer margin-top">
+                <div id="trainingData" class="chartBox" style="grid-column: 1; grid-row: 1;">
+                    <h1 class="labels">Your Training Data</h1>
+                <canvas class="chart" id="myRegressionChart"></canvas>
+                </div>
+                <div id="costMSE" class="chartBox" style="grid-column: 2; grid-row: 1;">
+                    <h1 class="labels">Mean Squared Error Cost</h1>
+                    <canvas class="chart"id="myCostChart"></canvas>
+                </div>
+                <div id="evalTraining" class="chartBox evalBox" style="grid-column: 2; grid-row: 1; display:none;">
+                    <h1 class="labels">Evaluation of Training data</h1>
+                    <div class="margin-top metricContainer" style="padding:40px; border:1px solid rgb(125, 125, 125);">
+                            <div class="metric">
+                                <div class="metricHeading">
+                                    <h1>R-SQUARED</h1>
+                                    <h1 id="r2Abs">0.75</h1>
+                                </div>
+                                <hr>
+                                <p class=" margin-top"><strong><span id="r2Percent">75%</span></strong> of the variation in <span id="r2yAxis">y-axis</span> is explained by <span  id="r2xAxis">x-axis</span></p>
+                            </div>                         
+                            <div class="metric margin-top">
+                                <div class="metricHeading">
+                                    <h1>MEAN SQUARED ERROR</h1>
+                                    <h1 id="MSE">0.75</h1>
+                                </div>
+                                <hr>
+                                <p class=" margin-top">Subtract predictions from actual values, square the differences, sum them, and take the average ,that's the Mean Squared Error (MSE)</p>
+                            </div>   
+                            <div class="metric margin-top">
+                                <div class="metricHeading">
+                                    <h1>T-STATISTIC</h1>
+                                    <h1 id="tStat">0.75</h1>
+                                </div>
+                                <hr>
+                                <p>this T-statistic would give a p-value of <strong><span id="tStat-pvalue">0.05</span></strong>. Therefore, <span id = "tStat-xaxis">xaxis</span> is <span id="tStat-signif"></span> <strong>Statistical Significant</strong></p>
+                            </div>                       
+                    </div>
+                </div>
+                <div id="testingData" class="chartBox margin-top" style="grid-column: 1; grid-row: 2; display:none;">
+                    <h1 class="labels">Your Testing Data</h1>
+                    <canvas class="chart" id="myTestChart"></canvas>
+                </div>
+                <div id="evalTesting" class="chartBox evalBox margin-top" style="grid-column: 2; grid-row: 2; display:none;">
+                    <h1 class="labels">Evaluation of Testing data</h1>
+                    <div class="margin-top metricContainer" style="padding:40px; border:1px solid rgb(125, 125, 125);">
+                            <div class="metric">
+                                <div class="metricHeading">
+                                    <h1>R-SQUARED</h1>
+                                    <h1 id="r2AbsTst">0.75</h1>
+                                </div>
+                                <hr>
+                                <p class=" margin-top"><strong><span id="r2PercentTst">75%</span></strong> of the variation in <span id="r2yAxisTst">y-axis</span> is explained by <span  id="r2xAxisTst">x-axis</span></p>
+                            </div>                         
+                            <div class="metric margin-top">
+                                <div class="metricHeading">
+                                    <h1>MEAN SQUARED ERROR</h1>
+                                    <h1 id="MSEtst">0.75</h1>
+                                </div>
+                                <hr>
+                                <p class=" margin-top">Subtract predictions from actual values, square the differences, sum them, and take the average ,that's the Mean Squared Error (MSE)</p>
+                            </div>                         
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+<script src="{{ url_for('static', filename='train.js') }}"></script>
+</body>
+</html>
+
+

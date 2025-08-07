@@ -1,0 +1,28 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocumentTT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <main class="mainContainer">
+        <section class="mainContent">
+            <h1 class="headings mainHeading">Train your Data <br>using Linear Regression</h1>
+            <p class="paragraphs">by Lakshay jain</p>
+            <div class="fileUploadContainer">
+            <form id="csvForm" enctype="multipart/form-data">  
+                <label id ="file-name" class="fileUpload" for="real-file">Upload File</label>
+                <input type="file" name="file" id="real-file" accept=".csv" onchange="showFileName()" />  
+                <input class="fileSubmit" type = "submit" value="Train Your Data !!!" >  
+            </form>  
+            </div>
+        </section>
+    </main>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
+
+
