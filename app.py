@@ -144,4 +144,4 @@ def send_scatter_data():
     return jsonify({"data":final_scatter_data,"axis":list(linear_data.columns)})
 
 if __name__ == "__main__":
-    socketio.run(app)
+    socketio.run(app, host="0.0.0.0", port=5000)
