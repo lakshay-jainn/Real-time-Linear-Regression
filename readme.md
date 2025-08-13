@@ -58,7 +58,7 @@
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">DEMO VIDEO</h3>   
 <video width="800" height="450" controls>
-  <source src="[./static/vid/demo.mp4](https://github.com/user-attachments/assets/0c478b5b-ab8e-4373-a23a-ba3ecf289129)" type="video/mp4">
+  <source src="https://github.com/user-attachments/assets/0c478b5b-ab8e-4373-a23a-ba3ecf289129" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
