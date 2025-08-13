@@ -84,14 +84,14 @@ body{
       z-index: 0;
 
 }
-    @keyframes shine {
-      0% {
-        left: -75%;
-      }
-      100% {
-        left: 125%;
-      }
-    }
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
 .mainContent{
   max-width: max-content;
   margin:0 auto;
