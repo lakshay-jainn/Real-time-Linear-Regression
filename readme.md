@@ -43,6 +43,8 @@
     <li>
         <p style = "margin:0" class="" >EVALUATION METRICS USED → </p>
         <ol style = "margin:0">
+
+
         <li><strong>MEAN SQUARED ERROR</strong></li>
         <li><strong>R-SQUARED</strong></li>
         <li><strong>T-STATISTIC</strong></li>
@@ -58,7 +60,9 @@
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">DEMO VIDEO</h3>
 <h3 style = "margin: 0;margin-bottom:20px;font-size">I have uploaded a demo training dataset, and tested my trained model on an unseen training dataset. <br> you can access the video here: <span style = "font-weight:bold"><a href = "./static/vid/demo.mp4">VIEW THE DEMO VIDEO</a></h3>
-<img width="840" height="450" src="./static/img/demo-thumbnail.png">
+    
+<video width="840" height="450" src="https://github.com/user-attachments/assets/0c478b5b-ab8e-4373-a23a-ba3ecf289129">
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">LIVE DEPLOYED LINK</h3>
 <h3 style = "margin: 0;margin-bottom:20px;font-size">I have also deployed this flask application online on render,<br> you can access this application through here: <span style = "font-weight:bold"><a href = "https://gd-iftk.onrender.com/">VISIT THE LIVE APPLICATION</a></h3>
+
