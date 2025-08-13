@@ -56,14 +56,14 @@
     </li>
 </ol>
 
+<h2 style="margin:0; margin-bottom:5px; margin-top:20px">LIVE DEPLOYED LINK</h3>
+<h3 style = "margin: 0;margin-bottom:20px;font-size">I have also deployed this flask application online on render,<br> you can access this application through here: <span style = "font-weight:bold"><a href = "https://gd-iftk.onrender.com/">VISIT THE LIVE APPLICATION</a></h3>
+
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">DEMO VIDEO</h3>   
-<video width="800" height="450" controls>
-  <source src="https://github.com/user-attachments/assets/0c478b5b-ab8e-4373-a23a-ba3ecf289129" type="video/mp4">
+<video src="https://github.com/user-attachments/assets/0c478b5b-ab8e-4373-a23a-ba3ecf289129" width="800" height="450" controls>
   Your browser does not support the video tag.
 </video>
 
-<h2 style="margin:0; margin-bottom:5px; margin-top:20px">LIVE DEPLOYED LINK</h3>
-<h3 style = "margin: 0;margin-bottom:20px;font-size">I have also deployed this flask application online on render,<br> you can access this application through here: <span style = "font-weight:bold"><a href = "https://gd-iftk.onrender.com/">VISIT THE LIVE APPLICATION</a></h3>
 
 
 
