@@ -23,9 +23,7 @@
 </ol>
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">TECH STACK</h3>
-<div style = "display:flex;
-        gap:10px;
-        justify-content:flex-start;">
+<div style = "display:flex;gap:10px;justify-content:flex-start;">
         <img style = "width:100px;border-radius:10px;" class = "tech-logo" src = "./static/img/flask.png" />
         <img style = "width:100px;border-radius:10px;" class = "tech-logo" src = "./static/img/socketio.jpg" />
         <img style = "width:100px;border-radius:10px;" class = "tech-logo" src = "./static/img/html.jpg" />
