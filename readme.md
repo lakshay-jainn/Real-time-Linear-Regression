@@ -43,8 +43,6 @@
     <li>
         <p style = "margin:0" class="" >EVALUATION METRICS USED → </p>
         <ol style = "margin:0">
-
-
         <li><strong>MEAN SQUARED ERROR</strong></li>
         <li><strong>R-SQUARED</strong></li>
         <li><strong>T-STATISTIC</strong></li>
@@ -65,4 +63,5 @@
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">LIVE DEPLOYED LINK</h3>
 <h3 style = "margin: 0;margin-bottom:20px;font-size">I have also deployed this flask application online on render,<br> you can access this application through here: <span style = "font-weight:bold"><a href = "https://gd-iftk.onrender.com/">VISIT THE LIVE APPLICATION</a></h3>
+
 
