@@ -1,18 +1,4 @@
-<style>
-    .tech-logo-container{
-        display:flex;
-        gap:10px;
-        justify-content:flex-start;
-    }
-    .tech-logo{
-        width:100px;
-        border-radius:10px;
-    }
-    .underline{
-        text-decoration:underline
 
-    }
-</style>
 <h1 style = "margin: 0; margin-bottom:5px;">Real time Linear Regression trainer & evaluator</h1>
 <p style = "margin: 0;margin-bottom:20px;">by <span style = "font-weight:bold">Lakshay Jain<span></p>
 
@@ -37,13 +23,21 @@
 </ol>
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">TECH STACK</h3>
-<div class = "tech-logo-container">
-        <img class = "tech-logo" src = "./static/img/flask.png" />
-        <img class = "tech-logo" src = "./static/img/socketio.jpg" />
-        <img class = "tech-logo" src = "./static/img/html.jpg" />
-        <img class = "tech-logo" src = "./static/img/css.jpg" />
-        <img class = "tech-logo" src = "./static/img/js.jpg" />
-        <img class = "tech-logo" src = "./static/img/chartjs.jpg" />
+<div style = "display:flex;
+        gap:10px;
+        justify-content:flex-start;">
+        <img style = "width:100px;
+        border-radius:10px;" class = "tech-logo" src = "./static/img/flask.png" />
+        <img style = "width:100px;
+        border-radius:10px;" class = "tech-logo" src = "./static/img/socketio.jpg" />
+        <img style = "width:100px;
+        border-radius:10px;" class = "tech-logo" src = "./static/img/html.jpg" />
+        <img style = "width:100px;
+        border-radius:10px;" class = "tech-logo" src = "./static/img/css.jpg" />
+        <img style = "width:100px;
+        border-radius:10px;" class = "tech-logo" src = "./static/img/js.jpg" />
+        <img style = "width:100px;
+        border-radius:10px;" class = "tech-logo" src = "./static/img/chartjs.jpg" />
 </div>
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">MATHEMATICAL ASPECTS</h3>
@@ -70,11 +64,9 @@
     </li>
 </ol>
 
-<h2 style="margin:0; margin-bottom:5px; margin-top:20px">LIVE DEMO</h3>
-<video width="800" height="450" controls>
-  <source src="./static/vid/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<h2 style="margin:0; margin-bottom:5px; margin-top:20px">DEMO VIDEO</h3>
+<h3 style = "margin: 0;margin-bottom:20px;font-size">I have uploaded a demo training dataset, and tested my trained model on an unseen training dataset. <br> you can access the video here: <span style = "font-weight:bold"><a href = "./static/vid/demo.mp4">VIEW THE DEMO VIDEO</a></h3>
+<img width="840" height="450" src="./static/img/demo-thumbnail.png">
 
 <h2 style="margin:0; margin-bottom:5px; margin-top:20px">LIVE DEPLOYED LINK</h3>
 <h3 style = "margin: 0;margin-bottom:20px;font-size">I have also deployed this flask application online on render,<br> you can access this application through here: <span style = "font-weight:bold"><a href = "https://gd-iftk.onrender.com/">VISIT THE LIVE APPLICATION</a></h3>
